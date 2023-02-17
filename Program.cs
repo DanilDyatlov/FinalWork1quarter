@@ -10,24 +10,24 @@ int countElem = CountLength(array);
 string[] newString = NewStringArray (array, countElem);
 PrintArray(newString);
 
-int CountLength(string[] arr) // поиск символов 
+int CountLength(string[] arr, int maxSizeChars = 3) // поиск символов 
 {
     int countElem = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (arr[i].Length <= 3) countElem++;
+        if (arr[i].Length <= maxSizeChars) countElem++;
     }
     return countElem;
 }
 
-string[] NewStringArray (string[] arr, int countElem) // запись нового массива 
+string[] NewStringArray (string[] arr, int countElem, int maxSizeChars = 3) // запись нового массива 
 {
     string[] newArray = new string[countElem];
     int arrIndex = 0;
 
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3)
+        if (array[i].Length <= maxSizeChars)
         {
             newArray[arrIndex] = arr[i];
             arrIndex++;
